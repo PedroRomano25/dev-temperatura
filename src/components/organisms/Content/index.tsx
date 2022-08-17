@@ -12,7 +12,6 @@ const Content = componentFactory<IContentProps>("Content", (props, ref) => {
   const {
     climate,
     climateFigure,
-    dayDescription,
     humidity,
     maxTemperature,
     minTemperature,
