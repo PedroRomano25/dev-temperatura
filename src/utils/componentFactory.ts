@@ -1,3 +1,5 @@
+import * as React from "react";
+
 type IComponentProp<IProps, IRef> = (
     props: IProps,
     ref: React.ForwardedRef<IRef>
@@ -11,3 +13,11 @@ export type IComponentFactory = <IProps, IRef = any>(
     componentName: string,
     component: IComponentProp<IProps, IRef>
 ) => IComponent<IProps, IRef>;
+
+const componentFactory: IComponentFactory = (componentName, ComponentBase) => {
+    const Component = React.memo(React.forwardRef(ComponentBase));
+    Component.displayName = componentName;
+    return Component;
+};
+
+export default componentFactory;

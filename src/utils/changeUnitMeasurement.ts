@@ -1,3 +1,8 @@
+export interface IUnitOfMeasurement {
+    temperature: string;
+    speed: string;
+}
+
 export const changeUnitMeasurement = (
     unit: any,
     setUnit: any,

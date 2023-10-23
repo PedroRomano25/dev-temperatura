@@ -9,8 +9,11 @@ import { defaultValueForecast } from "../Data/foreCastClimate";
 import i18n from "../translate/i18n";
 import { useTranslation } from "react-i18next";
 import { updateData } from "../service/updateData";
-import { changeUnitMeasurement } from "../utils/changeUnitMeasurement/changeUnitMeasurement";
-import { getLocalByCoordinate } from "../utils/getLocalByCoordinate/getLocalByCoordinate";
+import {
+    IUnitOfMeasurement,
+    changeUnitMeasurement,
+} from "../utils/changeUnitMeasurement";
+import { getLocalByCoordinate } from "../utils/getLocalByCoordinate";
 import { GetCurrentCityState } from "../service/localeCoordinates";
 import { debounce } from "../utils/helpers";
 import { variantColor } from "../utils/string";
@@ -32,7 +35,7 @@ const Principal: NextPage = () => {
             speed: "Km/h",
         });
     const local = useGeoLocation();
-    const getCurrentyCity = GetCurrentCityState();
+    const getCurrentCity = GetCurrentCityState();
     const unitTemp = unitMeasurement.temperature;
     const unitSpeed = unitMeasurement.speed;
 
@@ -69,7 +72,7 @@ const Principal: NextPage = () => {
     }, [response, unit, language]);
 
     useEffect(() => {
-        getLocalByCoordinate(getCurrentyCity, setIsLoading, local, setResponse);
+        getLocalByCoordinate(getCurrentCity, setIsLoading, local, setResponse);
     }, [local.loaded]);
 
     const getColorVariant = React.useCallback(

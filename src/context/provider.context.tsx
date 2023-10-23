@@ -17,12 +17,14 @@ const FormContext = createContext<ContextType | undefined>(undefined);
 
 export const ClimateProvider = ({ children }: ClimateProviderProps) => {
     const [image, setImage] = useState<string>("");
+    const [dataClimate, setDataClimate] = useState<string>("");
     useEffect(() => {
         const imageBackground = new imageBing();
         imageBackground.Get().then((imageUrl) => {
             setImage(imageUrl);
         });
     }, []);
+
     const value = { image };
     return (
         <FormContext.Provider value={value}>{children}</FormContext.Provider>

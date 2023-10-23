@@ -1,6 +1,14 @@
 import * as React from "react";
-import componentFactory from "../../../utils/componentFactory/componentFactory";
+import componentFactory from "../../../utils/componentFactory";
 import styles from "./index.module.scss";
+
+interface IDetailsTemperatureProps
+    extends React.HTMLAttributes<HTMLDivElement> {
+    climate: string;
+    humidity: string;
+    pressure: string;
+    wind: string;
+}
 
 const DetailsTemperature = componentFactory<IDetailsTemperatureProps>(
     "DetailsTemperature",

@@ -1,11 +1,40 @@
 import * as React from "react";
-import componentFactory from "../../../utils/componentFactory/componentFactory";
+import componentFactory from "../../../utils/componentFactory";
 import Segment from "../../atoms/Segment";
 import styles from "./index.module.scss";
 import Image from "next/image";
 import TemperatureDay from "../../molecules/TemperatureDay";
 import DetailsTemperature from "../../molecules/DetailsTemperature";
 import { useMemo } from "react";
+
+export interface IContentProps extends React.HTMLAttributes<HTMLElement> {
+    text: {
+        today: string;
+        tomorrow: string;
+        afterTomorrow: string;
+    };
+    dataCurrent: {
+        climateFigure: string;
+        dayDescription: string;
+        temperature: string;
+        maxTemperature: string;
+        minTemperature: string;
+        climate: string;
+        humidity: string;
+        pressure: string;
+        wind: string;
+    };
+    dataForecast: {
+        temperatureTomorrow: string;
+        maxTemperatureTomorrow: string;
+        minTemperatureTomorrow: string;
+        temperatureAfterTomorrow: string;
+        maxTemperatureAfterTomorrow: string;
+        minTemperatureAfterTomorrow: string;
+    };
+    variant: "Yellow" | "Blue" | "Red" | "White";
+    onClick: () => void;
+}
 
 const Content = componentFactory<IContentProps>(
     "Content",

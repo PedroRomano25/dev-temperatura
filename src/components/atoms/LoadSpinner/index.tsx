@@ -1,5 +1,5 @@
 import * as React from "react";
-import componentFactory from "../../../utils/componentFactory/componentFactory";
+import componentFactory from "../../../utils/componentFactory";
 import styles from "./index.module.scss";
 
 const LoadSpinner = componentFactory("LoadSpinner", (props, ref) => {

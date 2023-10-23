@@ -1,13 +1,20 @@
-import { IGeoLocation } from "./interface";
+export interface IGeoLocation {
+    loaded: boolean;
+    coordinates?: ICoordinates;
+    error?: {
+        code: number;
+        message: string;
+    };
+}
 
 export const getLocalByCoordinate = async (
-    getCurrentyCityByCoordinate: any,
+    getCurrentCityByCoordinate: any,
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
     local: IGeoLocation,
     setResponse: React.Dispatch<React.SetStateAction<string>>
 ) => {
     const getDescriptionLocation = async (lat: number, lng: number) => {
-        return await getCurrentyCityByCoordinate.Get(
+        return await getCurrentCityByCoordinate.Get(
             lat as number,
             lng as number
         );

@@ -1,5 +1,5 @@
 import * as React from "react";
-import componentFactory from "../../../utils/componentFactory/componentFactory";
+import componentFactory from "../../../utils/componentFactory";
 import LoadSpinner from "../../atoms/LoadSpinner";
 import styles from "./index.module.scss";
 

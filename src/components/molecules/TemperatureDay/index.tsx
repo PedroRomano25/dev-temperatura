@@ -1,6 +1,15 @@
 import * as React from "react";
-import componentFactory from "../../../utils/componentFactory/componentFactory";
+import componentFactory from "../../../utils/componentFactory";
 import styles from "./index.module.scss";
+
+interface ITemperatureDayProps extends React.HTMLAttributes<HTMLDivElement> {
+    dayDescription: string;
+    temperature: string;
+    maxTemperature?: string;
+    minTemperature?: string;
+    children?: React.ReactNode;
+    onClick: () => void;
+}
 
 const TemperatureDay = componentFactory<ITemperatureDayProps>(
     "TemperatureDay",

@@ -1,6 +1,19 @@
 import axios from "axios";
-import { useMemo } from "react";
-
+interface IAllOriginResponse {
+    data: {
+        contents: string;
+        status: {
+            url: string;
+        };
+    };
+}
+interface IBingImageResponse {
+    images: [
+        {
+            url: string;
+        }
+    ];
+}
 class imageBing {
     async Get() {
         const url = `https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=pt-BR`;

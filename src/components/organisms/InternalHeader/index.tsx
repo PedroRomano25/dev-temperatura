@@ -1,5 +1,5 @@
 import * as React from "react";
-import componentFactory from "../../../utils/componentFactory/componentFactory";
+import componentFactory from "../../../utils/componentFactory";
 import Header from "../../atoms/Header";
 import Image from "next/image";
 import compass from "../../../../public/44.svg";
@@ -8,6 +8,12 @@ import Input from "../../atoms/Input";
 import braFlag from "../../../../public/flags/braFlag.svg";
 import euaFlag from "../../../../public/flags/euaFlag.svg";
 import { validLocalStorage } from "../../../utils/helpers";
+
+export interface IInternalHeaderProps {
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChangeLanguage: () => void;
+}
 
 const InternalHeader = componentFactory<IInternalHeaderProps>(
     "InternalHeader",

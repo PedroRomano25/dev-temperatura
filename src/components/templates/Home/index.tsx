@@ -1,9 +1,17 @@
 import * as React from "react";
-import componentFactory from "../../../utils/componentFactory/componentFactory";
+import componentFactory from "../../../utils/componentFactory";
 import Container from "../../atoms/Container";
 import LoadContainer from "../../molecules/LoadContainer";
-import Content from "../../organisms/Content";
-import InternalHeader from "../../organisms/InternalHeader";
+import Content, { IContentProps } from "../../organisms/Content";
+import InternalHeader, {
+    IInternalHeaderProps,
+} from "../../organisms/InternalHeader";
+
+interface IHomeProps extends IContentProps, IInternalHeaderProps {
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChangeLanguage: () => void;
+    isLoading: boolean;
+}
 
 const Home = componentFactory<IHomeProps>(
     "Home",

@@ -1,12 +1,44 @@
 import { noResultFound } from "../Data/currentClimate";
-import { figuresWeather } from "../utils/string/enum";
 import {
+    figuresWeather,
     formatTemperature,
     getWindDirection,
     iconWeather,
 } from "../utils/string";
 import weather from "./weather";
 
+interface IWeather {
+    description: string;
+    icon: string;
+    id: number;
+    main: string;
+}
+
+interface IMainWeather {
+    feels_like: number;
+    humidity: number;
+    pressure: number;
+    temp: number;
+    temp_max: number;
+    temp_min: number;
+}
+
+interface ICurrentClimateResponse {
+    main: IMainWeather;
+    weather: IWeather[];
+    wind: {
+        deg: number;
+        speed: number;
+    };
+}
+interface IForecastClimateResponse {
+    list: [
+        {
+            dt_txt: string;
+            main: IMainWeather[];
+        }
+    ];
+}
 const handleCurrentClimate = (
     response: string,
     unit: any,
