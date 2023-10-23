@@ -1,3 +1,5 @@
+import { IGeoLocation } from "./interface";
+
 export const getLocalByCoordinate = async (
     getCurrentyCityByCoordinate: any,
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
