@@ -1,17 +1,14 @@
 import * as React from "react";
-import componentFactory from "../../../utils/componentFactory";
+import componentFactory from "../../../utils/componentFactory/componentFactory";
 import LoadSpinner from "../../atoms/LoadSpinner";
 import styles from "./index.module.scss";
 
-const LoadContainer = componentFactory(
-  "TemperatureDay",
-  (props, ref) => {
+const LoadContainer = componentFactory("TemperatureDay", (props, ref) => {
     return (
-      <div ref={ref} className={styles.LoadContainer} >
-        <LoadSpinner/>       
-      </div>
+        <div ref={ref} className={styles.LoadContainer}>
+            <LoadSpinner />
+        </div>
     );
-  }
-);
+});
 
 export default LoadContainer;
