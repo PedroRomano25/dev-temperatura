@@ -176,12 +176,12 @@ const handleForecastClimate = (
         });
 };
 
-export const updateData = (
+export const updateDataClimate = (
     response: string,
-    unit: any,
-    language: any,
-    unitSpeed: string,
-    unitTemp: string,
+    unit: IUnitMeasure,
+    language: ILanguage,
+    unitSpeed: IUnitSpeed,
+    unitTemp: IUnitTemperature,
     humidity: string,
     pressure: string,
     wind: string

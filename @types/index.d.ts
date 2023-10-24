@@ -1,7 +1,9 @@
 import React from "react";
 
 declare global {
-    type IUnit = "metric" | "imperial";
+    type IUnitTemperature = "C" | "F";
+    type IUnitSpeed = "Km/h" | "Mph";
+    type IUnitMeasure = "metric" | "imperial";
     type ILanguage = "pt_br" | "en";
     type IVariantColor = "Yellow" | "Blue" | "Red" | "White";
     interface ICurrentClimate {

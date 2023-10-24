@@ -1,4 +1,5 @@
-import  { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { IGeoLocation } from "../utils/getLocalByCoordinate";
 
 const GetGeoLocation = () => {
     const [location, setLocation] = useState<IGeoLocation>({
@@ -6,7 +7,7 @@ const GetGeoLocation = () => {
         coordinates: { lat: "", lng: "" },
     });
 
-    const onSuccess = (location:any) => {
+    const onSuccess = (location: any) => {
         setLocation({
             loaded: true,
             coordinates: {
@@ -16,7 +17,7 @@ const GetGeoLocation = () => {
         });
     };
 
-    const onError = (error:any) => {
+    const onError = (error: any) => {
         setLocation({
             loaded: true,
             error: {
@@ -42,6 +43,6 @@ const GetGeoLocation = () => {
 
 export default GetGeoLocation;
 
-export const useGeoLocation = () => {    
+export const useGeoLocation = () => {
     return useMemo(() => GetGeoLocation(), []);
-}
+};
